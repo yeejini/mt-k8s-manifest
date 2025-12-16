@@ -6,4 +6,4 @@ resources:
 
 images:
   - name: mungtrainer/web-app
-    newTag: latest   # CI가 여기만 수정
+    newTag: ccd5f59fd1b65caae3616b5b8e9c75d50fa05181
