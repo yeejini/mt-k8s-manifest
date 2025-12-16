@@ -5,5 +5,5 @@ resources:
   - ../../base
 
 images:
-  - name: mungtrainer/web-app
+  - name: kangyejini/web-app
     newTag: 5d43f5a8d7f3da31d2529f7b3c336d2145e43d7f
