@@ -6,4 +6,4 @@ resources:
 
 images:
   - name: mungtrainer/web-app
-    newTag: ccd5f59fd1b65caae3616b5b8e9c75d50fa05181
+    newTag: f0b0b8025c586e4e0e3bd87391920131de749830
