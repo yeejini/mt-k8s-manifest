@@ -6,4 +6,4 @@ resources:
 
 images:
   - name: kangyejini/web-app
-    newTag: 746397100b5cdadd2f3ee3448a569512e3449506
+    newTag: f7859d15db38ef613909064517da8040410b55ce
