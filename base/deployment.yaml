@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mt-spring-deployment
-  namespace: mt-spring-nms
+  namespace: ingress
 spec:
   selector:
     matchLabels:
@@ -15,7 +15,7 @@ spec:
       serviceAccountName: mt-spring-sa
       containers:
         - name: mt-spring
-          image: kangyejini/web-app:df6454a2bc15d0e64099f4af7880b71050bd47e2
+          image: kangyejini/web-app:4065d0895c65031e87255b5325a3da390fadcc2e
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

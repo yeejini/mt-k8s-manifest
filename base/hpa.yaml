@@ -2,7 +2,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: mt-spring-hpa
-  namespace: mt-spring-nms
+  namespace: ingress
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
