@@ -1,13 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mt-spring-deploy
+  name: mt-spring-deployment
   namespace: mt-spring-nms
-  labels:
-    app: mt-spring
 spec:
-  replicas: 3
-  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: mt-spring
@@ -16,15 +12,13 @@ spec:
       labels:
         app: mt-spring
     spec:
+      serviceAccountName: mt-spring-sa
       containers:
         - name: mt-spring
-          image: kangyejini/web-app:3c88be776153cb0a061eb30be211178ab3ea09f7
+          image: kangyejini/web-app:df6454a2bc15d0e64099f4af7880b71050bd47e2
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
-          env:
-            - name: SPRING_PROFILES_ACTIVE
-              value: default   # application.yml만 읽도록 강제
           envFrom:
             - configMapRef:
                 name: mt-server-config
@@ -32,23 +26,8 @@ spec:
                 name: mt-spring-scr
           resources:
             requests:
-              memory: "512Mi"
-              cpu: "250m"
-              ephemeral-storage: "100Mi"
-            limits:
-              memory: "1Gi"
               cpu: "500m"
-              ephemeral-storage: "500Mi"   # 최대 사용량
-          livenessProbe:
-            httpGet:
-              path: /actuator/health
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /actuator/health
-              port: 8080
-            initialDelaySeconds: 40
-            periodSeconds: 5
-      restartPolicy: Always
+              memory: "512Mi"
+            limits:
+              cpu: "1"
+              memory: "1Gi"

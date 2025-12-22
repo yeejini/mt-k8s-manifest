@@ -3,13 +3,11 @@ kind: Service
 metadata:
   name: mt-spring-svc
   namespace: mt-spring-nms
-  labels:
-    app: mt-spring
 spec:
-  type: ClusterIP
   selector:
-    app: mt-spring
+    app: mt-spring   # Deployment의 label과 일치시켜야 함
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 80       # 서비스 포트
+      targetPort: 8080  # 컨테이너 포트
+  type: ClusterIP
