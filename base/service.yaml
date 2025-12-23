@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mt-spring-svc
-  namespace: ingress
+  namespace: mt-ns
 spec:
   selector:
     app: mt-spring   # Deployment의 label과 일치시켜야 함

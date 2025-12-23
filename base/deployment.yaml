@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mt-spring-deployment
-  namespace: ingress
+  namespace: mt-ns
 spec:
   selector:
     matchLabels:
