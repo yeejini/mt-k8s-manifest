@@ -4,6 +4,7 @@ metadata:
   name: mt-spring-deployment
   namespace: mt-ns
 spec:
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: mt-spring
